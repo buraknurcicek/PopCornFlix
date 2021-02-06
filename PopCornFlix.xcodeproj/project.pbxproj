@@ -15,6 +15,9 @@
 		5979FC4C25CF13D600CC43B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5979FC4A25CF13D600CC43B6 /* LaunchScreen.storyboard */; };
 		5979FC5725CF13D700CC43B6 /* PopCornFlixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979FC5625CF13D700CC43B6 /* PopCornFlixTests.swift */; };
 		5979FC6225CF13D700CC43B6 /* PopCornFlixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979FC6125CF13D700CC43B6 /* PopCornFlixUITests.swift */; };
+		A4AC9916F41BE8A2447763B4 /* Pods_PopCornFlixTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67831DD33BDEC77CE8239717 /* Pods_PopCornFlixTests.framework */; };
+		AF1B8A7C0E93D41B7DDBB355 /* Pods_PopCornFlix_PopCornFlixUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CF39762425B619F4D90437 /* Pods_PopCornFlix_PopCornFlixUITests.framework */; };
+		F1A974B9B97F9749048F4A55 /* Pods_PopCornFlix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB739AE351B2AC789299E67A /* Pods_PopCornFlix.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		238DD9DD8A75A78B6647C641 /* Pods-PopCornFlix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopCornFlix.release.xcconfig"; path = "Target Support Files/Pods-PopCornFlix/Pods-PopCornFlix.release.xcconfig"; sourceTree = "<group>"; };
+		431F4655BFA8FA7CEA06F324 /* Pods-PopCornFlix-PopCornFlixUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopCornFlix-PopCornFlixUITests.debug.xcconfig"; path = "Target Support Files/Pods-PopCornFlix-PopCornFlixUITests/Pods-PopCornFlix-PopCornFlixUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5979FC3C25CF13D600CC43B6 /* PopCornFlix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopCornFlix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5979FC3F25CF13D600CC43B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5979FC4125CF13D600CC43B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +54,13 @@
 		5979FC5D25CF13D700CC43B6 /* PopCornFlixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopCornFlixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5979FC6125CF13D700CC43B6 /* PopCornFlixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopCornFlixUITests.swift; sourceTree = "<group>"; };
 		5979FC6325CF13D700CC43B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67831DD33BDEC77CE8239717 /* Pods_PopCornFlixTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PopCornFlixTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A8ED4737D5D4AD44E7D8024 /* Pods-PopCornFlix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopCornFlix.debug.xcconfig"; path = "Target Support Files/Pods-PopCornFlix/Pods-PopCornFlix.debug.xcconfig"; sourceTree = "<group>"; };
+		8FDD13F1E5A5787CDFF38F94 /* Pods-PopCornFlixTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopCornFlixTests.debug.xcconfig"; path = "Target Support Files/Pods-PopCornFlixTests/Pods-PopCornFlixTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B30C9CBFD33D78344A0931F6 /* Pods-PopCornFlixTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopCornFlixTests.release.xcconfig"; path = "Target Support Files/Pods-PopCornFlixTests/Pods-PopCornFlixTests.release.xcconfig"; sourceTree = "<group>"; };
+		C3CF39762425B619F4D90437 /* Pods_PopCornFlix_PopCornFlixUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PopCornFlix_PopCornFlixUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB739AE351B2AC789299E67A /* Pods_PopCornFlix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PopCornFlix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2DE6C7F6280432E36D54EA5 /* Pods-PopCornFlix-PopCornFlixUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopCornFlix-PopCornFlixUITests.release.xcconfig"; path = "Target Support Files/Pods-PopCornFlix-PopCornFlixUITests/Pods-PopCornFlix-PopCornFlixUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1A974B9B97F9749048F4A55 /* Pods_PopCornFlix.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4AC9916F41BE8A2447763B4 /* Pods_PopCornFlixTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF1B8A7C0E93D41B7DDBB355 /* Pods_PopCornFlix_PopCornFlixUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0463ABFB90ED126BE4FCFBE8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB739AE351B2AC789299E67A /* Pods_PopCornFlix.framework */,
+				C3CF39762425B619F4D90437 /* Pods_PopCornFlix_PopCornFlixUITests.framework */,
+				67831DD33BDEC77CE8239717 /* Pods_PopCornFlixTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5979FC3325CF13D600CC43B6 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +108,8 @@
 				5979FC5525CF13D700CC43B6 /* PopCornFlixTests */,
 				5979FC6025CF13D700CC43B6 /* PopCornFlixUITests */,
 				5979FC3D25CF13D600CC43B6 /* Products */,
+				7AA99551DF03F12EF9A4F725 /* Pods */,
+				0463ABFB90ED126BE4FCFBE8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +155,20 @@
 			path = PopCornFlixUITests;
 			sourceTree = "<group>";
 		};
+		7AA99551DF03F12EF9A4F725 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A8ED4737D5D4AD44E7D8024 /* Pods-PopCornFlix.debug.xcconfig */,
+				238DD9DD8A75A78B6647C641 /* Pods-PopCornFlix.release.xcconfig */,
+				431F4655BFA8FA7CEA06F324 /* Pods-PopCornFlix-PopCornFlixUITests.debug.xcconfig */,
+				F2DE6C7F6280432E36D54EA5 /* Pods-PopCornFlix-PopCornFlixUITests.release.xcconfig */,
+				8FDD13F1E5A5787CDFF38F94 /* Pods-PopCornFlixTests.debug.xcconfig */,
+				B30C9CBFD33D78344A0931F6 /* Pods-PopCornFlixTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5979FC6625CF13D700CC43B6 /* Build configuration list for PBXNativeTarget "PopCornFlix" */;
 			buildPhases = (
+				DDEFC2D5106383846409DDBF /* [CP] Check Pods Manifest.lock */,
 				5979FC3825CF13D600CC43B6 /* Sources */,
 				5979FC3925CF13D600CC43B6 /* Frameworks */,
 				5979FC3A25CF13D600CC43B6 /* Resources */,
+				9F92600124344D8D97EB569F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +195,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5979FC6925CF13D700CC43B6 /* Build configuration list for PBXNativeTarget "PopCornFlixTests" */;
 			buildPhases = (
+				C9ACBBCE5277DD7951666A7D /* [CP] Check Pods Manifest.lock */,
 				5979FC4E25CF13D700CC43B6 /* Sources */,
 				5979FC4F25CF13D700CC43B6 /* Frameworks */,
 				5979FC5025CF13D700CC43B6 /* Resources */,
@@ -170,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5979FC6C25CF13D700CC43B6 /* Build configuration list for PBXNativeTarget "PopCornFlixUITests" */;
 			buildPhases = (
+				D7BE14532C356E408721F551 /* [CP] Check Pods Manifest.lock */,
 				5979FC5925CF13D700CC43B6 /* Sources */,
 				5979FC5A25CF13D700CC43B6 /* Frameworks */,
 				5979FC5B25CF13D700CC43B6 /* Resources */,
+				DB7F0FD15654DA79AC3AD818 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +298,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9F92600124344D8D97EB569F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PopCornFlix/Pods-PopCornFlix-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PopCornFlix/Pods-PopCornFlix-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PopCornFlix/Pods-PopCornFlix-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9ACBBCE5277DD7951666A7D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PopCornFlixTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7BE14532C356E408721F551 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PopCornFlix-PopCornFlixUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB7F0FD15654DA79AC3AD818 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PopCornFlix-PopCornFlixUITests/Pods-PopCornFlix-PopCornFlixUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PopCornFlix-PopCornFlixUITests/Pods-PopCornFlix-PopCornFlixUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PopCornFlix-PopCornFlixUITests/Pods-PopCornFlix-PopCornFlixUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDEFC2D5106383846409DDBF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PopCornFlix-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5979FC3825CF13D600CC43B6 /* Sources */ = {
@@ -433,6 +582,7 @@
 		};
 		5979FC6725CF13D700CC43B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A8ED4737D5D4AD44E7D8024 /* Pods-PopCornFlix.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -451,6 +601,7 @@
 		};
 		5979FC6825CF13D700CC43B6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 238DD9DD8A75A78B6647C641 /* Pods-PopCornFlix.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -469,6 +620,7 @@
 		};
 		5979FC6A25CF13D700CC43B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FDD13F1E5A5787CDFF38F94 /* Pods-PopCornFlixTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +642,7 @@
 		};
 		5979FC6B25CF13D700CC43B6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B30C9CBFD33D78344A0931F6 /* Pods-PopCornFlixTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -511,6 +664,7 @@
 		};
 		5979FC6D25CF13D700CC43B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 431F4655BFA8FA7CEA06F324 /* Pods-PopCornFlix-PopCornFlixUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -530,6 +684,7 @@
 		};
 		5979FC6E25CF13D700CC43B6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2DE6C7F6280432E36D54EA5 /* Pods-PopCornFlix-PopCornFlixUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
