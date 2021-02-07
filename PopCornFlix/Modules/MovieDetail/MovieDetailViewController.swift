@@ -113,8 +113,11 @@ final class MovieDetailViewController: UIViewController {
     // MARK - Actions -
     @objc func favoriteTapped() {
         isFavorited.toggle()
+        configureFavoriteButton(isFavorited: isFavorited)
+    }
+    
+    func configureFavoriteButton(isFavorited: Bool) {
         isFavorited ? rightBarButtonItem.setImage(VisualConstants.CommonIcons.favorite.value, for: .normal) : rightBarButtonItem.setImage(VisualConstants.CommonIcons.unfavorite.value, for: .normal)
-        presenter.addFavorite(id: id)
     }
 
 }

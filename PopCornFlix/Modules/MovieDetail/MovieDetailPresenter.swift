@@ -19,7 +19,6 @@ final class MovieDetailPresenter {
     
     lazy var favoriteManager: FavoriteManagerProtocol = FavoriteManager()
 
-
     // MARK: - Lifecycle -
     init(view: MovieDetailViewInterface, interactor: MovieDetailInteractorInterface, wireframe: MovieDetailWireframeInterface) {
         self.view = view
@@ -30,10 +29,6 @@ final class MovieDetailPresenter {
 
 // MARK: - Extensions -
 extension MovieDetailPresenter: MovieDetailPresenterInterface {
-    func addFavorite(id: Int) {
-        favoriteManager.favoriteAction(id: id)
-    }
-    
     func getMovieDetail(id: Int) {
         interactor.getMovieDetail(id: id)
     }
@@ -41,6 +36,7 @@ extension MovieDetailPresenter: MovieDetailPresenterInterface {
     func setMovieData(movie: Movie) {
         view.setMovieData(movie: movie)
     }
+  
     
     func completedWithError() {
         

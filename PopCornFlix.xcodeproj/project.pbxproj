@@ -325,8 +325,8 @@
 			children = (
 				599C24C925CF7A550012C82D /* Components */,
 				599C24B625CF76B20012C82D /* MovieDetailInterfaces.swift */,
-				599C24B725CF76B20012C82D /* MovieDetailPresenter.swift */,
 				599C24B825CF76B20012C82D /* MovieDetailViewController.swift */,
+				599C24B725CF76B20012C82D /* MovieDetailPresenter.swift */,
 				599C24B925CF76B20012C82D /* MovieDetailInteractor.swift */,
 				599C24BA25CF76B20012C82D /* MovieDetailWireframe.swift */,
 				5954965A25D03F5B00C87CE5 /* MovieDetailWireFrameData.swift */,

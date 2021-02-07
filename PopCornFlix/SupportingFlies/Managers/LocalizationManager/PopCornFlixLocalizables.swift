@@ -17,9 +17,9 @@ public enum PopCornFlixLocalizables: GenericValueProtocol {
     public var value: String {
         switch self {
         case .movie:
-            return "movie".toLocalize()
+            return "Movie".toLocalize()
         case .movieDetail:
-            return "movieDetail".toLocalize()
+            return "Movie Detail".toLocalize()
 
         }
     }

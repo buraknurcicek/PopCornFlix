@@ -48,11 +48,12 @@ extension MoviePresenter: MoviePresenterInterface {
     }
     
     func getFavoriteMovies() {
-        favoriteManager.getFavorites()
-        favoriteManager.favoritesChanged = { [weak self] favorites in
-            guard let self = self else { return }
-            self.view.setFavoriteMovies(movieId: favorites)
-        }
+//        favoriteManager.getFavorites()
+//        favoriteManager.favoritesChanged = { [weak self] favorites in
+//            guard let self = self else { return }
+//            self.view.setFavoriteMovies(movieId: favorites)
+//            print(favorites)
+//        }
     }
     
     func completedWithError() {

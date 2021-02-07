@@ -159,10 +159,6 @@ extension MovieViewController: UISearchBarDelegate {
 }
 
 extension MovieViewController: MovieViewInterface {
-    func setFavoriteMovies(movieId: [Int]) {
-        self.favorites = movieId
-    }
-    
     func getFilteredMovies(filteredMovies: [Movie]) {
         self.movies = filteredMovies
         reloadTableView()

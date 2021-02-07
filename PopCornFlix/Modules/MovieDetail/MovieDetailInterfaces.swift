@@ -22,7 +22,6 @@ protocol MovieDetailPresenterInterface: PresenterInterface {
     func getMovieDetail(id: Int)
     func setMovieData(movie: Movie)
     func completedWithError()
-    func addFavorite(id: Int)
 }
 
 protocol MovieDetailInteractorInterface: InteractorInterface {
