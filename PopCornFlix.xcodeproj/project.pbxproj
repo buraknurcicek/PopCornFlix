@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		592DA7EA25D0196400B28AB0 /* ServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592DA7E925D0196400B28AB0 /* ServiceClient.swift */; };
+		592DA7EF25D0198700B28AB0 /* PopCornFlixRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592DA7EE25D0198700B28AB0 /* PopCornFlixRouter.swift */; };
+		592DA80625D01BA700B28AB0 /* PopCornFlixClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592DA80525D01BA700B28AB0 /* PopCornFlixClient.swift */; };
+		592DA80B25D01CC000B28AB0 /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592DA80A25D01CC000B28AB0 /* MovieList.swift */; };
 		5979FC4025CF13D600CC43B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979FC3F25CF13D600CC43B6 /* AppDelegate.swift */; };
 		5979FC4925CF13D600CC43B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5979FC4825CF13D600CC43B6 /* Assets.xcassets */; };
 		5979FC4C25CF13D600CC43B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5979FC4A25CF13D600CC43B6 /* LaunchScreen.storyboard */; };
@@ -28,7 +32,7 @@
 		599C24BE25CF76B20012C82D /* MovieDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C24B925CF76B20012C82D /* MovieDetailInteractor.swift */; };
 		599C24BF25CF76B20012C82D /* MovieDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C24BA25CF76B20012C82D /* MovieDetailWireframe.swift */; };
 		599C24CE25CF7CC90012C82D /* ScrollableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C24CD25CF7CC90012C82D /* ScrollableStackView.swift */; };
-		599C24D825CF85770012C82D /* VisualContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C24D725CF85770012C82D /* VisualContents.swift */; };
+		599C24D825CF85770012C82D /* VisualConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C24D725CF85770012C82D /* VisualConstants.swift */; };
 		599C24DD25CF860C0012C82D /* PopCornFlixLocalizables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C24DC25CF860C0012C82D /* PopCornFlixLocalizables.swift */; };
 		599C24E225CF86800012C82D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C24E125CF86800012C82D /* String+Extension.swift */; };
 		599C24E825CF86AD0012C82D /* GenericValueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C24E725CF86AD0012C82D /* GenericValueProtocol.swift */; };
@@ -58,6 +62,10 @@
 /* Begin PBXFileReference section */
 		238DD9DD8A75A78B6647C641 /* Pods-PopCornFlix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopCornFlix.release.xcconfig"; path = "Target Support Files/Pods-PopCornFlix/Pods-PopCornFlix.release.xcconfig"; sourceTree = "<group>"; };
 		431F4655BFA8FA7CEA06F324 /* Pods-PopCornFlix-PopCornFlixUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopCornFlix-PopCornFlixUITests.debug.xcconfig"; path = "Target Support Files/Pods-PopCornFlix-PopCornFlixUITests/Pods-PopCornFlix-PopCornFlixUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		592DA7E925D0196400B28AB0 /* ServiceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceClient.swift; sourceTree = "<group>"; };
+		592DA7EE25D0198700B28AB0 /* PopCornFlixRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopCornFlixRouter.swift; sourceTree = "<group>"; };
+		592DA80525D01BA700B28AB0 /* PopCornFlixClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopCornFlixClient.swift; sourceTree = "<group>"; };
+		592DA80A25D01CC000B28AB0 /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
 		5979FC3C25CF13D600CC43B6 /* PopCornFlix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopCornFlix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5979FC3F25CF13D600CC43B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5979FC4825CF13D600CC43B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,7 +93,7 @@
 		599C24B925CF76B20012C82D /* MovieDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailInteractor.swift; sourceTree = "<group>"; };
 		599C24BA25CF76B20012C82D /* MovieDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailWireframe.swift; sourceTree = "<group>"; };
 		599C24CD25CF7CC90012C82D /* ScrollableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableStackView.swift; sourceTree = "<group>"; };
-		599C24D725CF85770012C82D /* VisualContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualContents.swift; sourceTree = "<group>"; };
+		599C24D725CF85770012C82D /* VisualConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualConstants.swift; sourceTree = "<group>"; };
 		599C24DC25CF860C0012C82D /* PopCornFlixLocalizables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopCornFlixLocalizables.swift; sourceTree = "<group>"; };
 		599C24E125CF86800012C82D /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		599C24E725CF86AD0012C82D /* GenericValueProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericValueProtocol.swift; sourceTree = "<group>"; };
@@ -137,6 +145,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		592DA80425D01B8200B28AB0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				592DA80A25D01CC000B28AB0 /* MovieList.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5979FC3325CF13D600CC43B6 = {
 			isa = PBXGroup;
 			children = (
@@ -163,12 +179,9 @@
 			isa = PBXGroup;
 			children = (
 				5979FC7B25CF15A000CC43B6 /* App */,
-				5979FC8125CF161F00CC43B6 /* Constants */,
-				5979FCC125CF17AC00CC43B6 /* Helpers */,
-				5979FCC025CF178600CC43B6 /* Localization */,
+				592DA80425D01B8200B28AB0 /* Models */,
 				5979FC8325CF163700CC43B6 /* Modules */,
 				5979FC7C25CF15A900CC43B6 /* Networking */,
-				5979FCBF25CF178100CC43B6 /* Resources */,
 				5979FC8025CF15FB00CC43B6 /* SupportingFlies */,
 			);
 			path = PopCornFlix;
@@ -203,6 +216,9 @@
 		5979FC7C25CF15A900CC43B6 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				592DA7E925D0196400B28AB0 /* ServiceClient.swift */,
+				592DA7EE25D0198700B28AB0 /* PopCornFlixRouter.swift */,
+				592DA80525D01BA700B28AB0 /* PopCornFlixClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -211,6 +227,11 @@
 			isa = PBXGroup;
 			children = (
 				5979FC8425CF165300CC43B6 /* Base */,
+				5979FC8125CF161F00CC43B6 /* Constants */,
+				5979FC8225CF162600CC43B6 /* Extensions */,
+				5979FCC125CF17AC00CC43B6 /* Helpers */,
+				599C24E625CF86A00012C82D /* Protocols */,
+				5979FCC025CF178600CC43B6 /* Managers */,
 			);
 			path = SupportingFlies;
 			sourceTree = "<group>";
@@ -218,7 +239,7 @@
 		5979FC8125CF161F00CC43B6 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				599C24D725CF85770012C82D /* VisualContents.swift */,
+				599C24D725CF85770012C82D /* VisualConstants.swift */,
 				599C24F225CF875B0012C82D /* NetworkConstants.swift */,
 			);
 			path = Constants;
@@ -245,33 +266,24 @@
 		5979FC8425CF165300CC43B6 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				5979FC4825CF13D600CC43B6 /* Assets.xcassets */,
 				5979FC4A25CF13D600CC43B6 /* LaunchScreen.storyboard */,
 				5979FC4D25CF13D600CC43B6 /* Info.plist */,
 			);
 			path = Base;
 			sourceTree = "<group>";
 		};
-		5979FCBF25CF178100CC43B6 /* Resources */ = {
+		5979FCC025CF178600CC43B6 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				5979FC4825CF13D600CC43B6 /* Assets.xcassets */,
+				599C24F725CF87D20012C82D /* LocalizationManager */,
 			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		5979FCC025CF178600CC43B6 /* Localization */ = {
-			isa = PBXGroup;
-			children = (
-				599C24F725CF87D20012C82D /* LocalizableManager */,
-			);
-			path = Localization;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		5979FCC125CF17AC00CC43B6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				599C24E625CF86A00012C82D /* Protocols */,
-				5979FC8225CF162600CC43B6 /* Extensions */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -316,12 +328,12 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		599C24F725CF87D20012C82D /* LocalizableManager */ = {
+		599C24F725CF87D20012C82D /* LocalizationManager */ = {
 			isa = PBXGroup;
 			children = (
 				599C24DC25CF860C0012C82D /* PopCornFlixLocalizables.swift */,
 			);
-			path = LocalizableManager;
+			path = LocalizationManager;
 			sourceTree = "<group>";
 		};
 		59F879FA25CF59DC0045EB10 /* Movie */ = {
@@ -591,9 +603,11 @@
 				599C24E225CF86800012C82D /* String+Extension.swift in Sources */,
 				599C24F325CF875B0012C82D /* NetworkConstants.swift in Sources */,
 				599C247825CF5DE20012C82D /* MovieInterfaces.swift in Sources */,
+				592DA80625D01BA700B28AB0 /* PopCornFlixClient.swift in Sources */,
 				599C248225CF5EB60012C82D /* BaseWireframe.swift in Sources */,
 				599C24CE25CF7CC90012C82D /* ScrollableStackView.swift in Sources */,
 				599C24E825CF86AD0012C82D /* GenericValueProtocol.swift in Sources */,
+				592DA80B25D01CC000B28AB0 /* MovieList.swift in Sources */,
 				599C24DD25CF860C0012C82D /* PopCornFlixLocalizables.swift in Sources */,
 				599C247925CF5DE20012C82D /* MoviePresenter.swift in Sources */,
 				599C24BD25CF76B20012C82D /* MovieDetailViewController.swift in Sources */,
@@ -602,12 +616,14 @@
 				599C249225CF5F920012C82D /* ViewInterface.swift in Sources */,
 				599C24BB25CF76B20012C82D /* MovieDetailInterfaces.swift in Sources */,
 				599C248D25CF5F780012C82D /* PresenterInterface.swift in Sources */,
-				599C24D825CF85770012C82D /* VisualContents.swift in Sources */,
+				592DA7EF25D0198700B28AB0 /* PopCornFlixRouter.swift in Sources */,
+				599C24D825CF85770012C82D /* VisualConstants.swift in Sources */,
 				599C24BF25CF76B20012C82D /* MovieDetailWireframe.swift in Sources */,
 				599C249725CF5FA40012C82D /* InteractorInterface.swift in Sources */,
 				599C247C25CF5DE20012C82D /* MovieWireframe.swift in Sources */,
 				599C24A225CF66450012C82D /* MovieCollectionViewCell.swift in Sources */,
 				5979FC4025CF13D600CC43B6 /* AppDelegate.swift in Sources */,
+				592DA7EA25D0196400B28AB0 /* ServiceClient.swift in Sources */,
 				599C247A25CF5DE20012C82D /* MovieViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
