@@ -15,7 +15,10 @@ import UIKit
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = MovieWireframe().viewController
+        let navigationController = UINavigationController()
+        let mainView = MovieWireframe().viewController
+        navigationController.viewControllers = [mainView]
+        self.window!.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
         
         return true
