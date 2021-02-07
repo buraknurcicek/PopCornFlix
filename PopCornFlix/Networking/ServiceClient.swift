@@ -19,7 +19,6 @@ class ServiceClient: ServiceClientProtocol {
         AF.request(route).validate().responseData { (response) in
             if let request = response.request,
                let url = request.url {
-                print(url.absoluteString)
             }
             completion(response.value, response.error)
         }

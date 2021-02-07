@@ -21,17 +21,17 @@ public enum PopCornFlixLocalizables: GenericValueProtocol {
     public var value: String {
         switch self {
         case .movie:
-            return "Movie".toLocalize()
+            return "movie".toLocalize()
         case .movieDetail:
-            return "Movie Detail".toLocalize()
+            return "movieDetail".toLocalize()
         case .error:
-            return "Error".toLocalize()
+            return "error".toLocalize()
         case .message:
-            return "Something happened".toLocalize()
+            return "errorMessage".toLocalize()
         case .done:
-            return "Done".toLocalize()
+            return "done".toLocalize()
         case .loadMore:
-            return "Load More".toLocalize()
+            return "loadMore".toLocalize()
         }
     }
 }
