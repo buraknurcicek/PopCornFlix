@@ -86,6 +86,8 @@ final class MovieViewController: UIViewController {
     // MARK: - Actions -
     @objc func loadMoreButtonTapped(sender : UIButton) {
         loadMoreButton.isHidden = true
+        searchBar.text = ""
+        searchBar.endEditing(true)
         paginationIndex += 1
         presenter.getPopularMovies(pagination: paginationIndex)
     }
