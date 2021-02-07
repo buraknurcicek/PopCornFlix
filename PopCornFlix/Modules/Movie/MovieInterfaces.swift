@@ -11,7 +11,7 @@
 import UIKit
 
 protocol MovieWireframeInterface: WireframeInterface {
-    func openMovieDetailModule()
+    func openMovieDetailModule(data: MovieDetailWireFrameData)
 }
 
 protocol MovieViewInterface: ViewInterface {
@@ -20,7 +20,7 @@ protocol MovieViewInterface: ViewInterface {
 }
 
 protocol MoviePresenterInterface: PresenterInterface {
-    func openMovieDetailModule()
+    func openMovieDetailModule(data: MovieDetailWireFrameData)
     func getPopularMovies(pagination: Int)
     func completedWithError()
     func setPopularMovies(movieList: MovieList)

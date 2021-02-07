@@ -21,7 +21,6 @@ final class MovieDetailViewController: UIViewController {
     
     lazy var movieImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = VisualConstants.CommonIcons.launchScreen.value
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -30,7 +29,6 @@ final class MovieDetailViewController: UIViewController {
     lazy var movieNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Deneme"
         label.numberOfLines = 0
         return label
     }()
@@ -38,15 +36,13 @@ final class MovieDetailViewController: UIViewController {
     lazy var movieDescriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Deneme deneme deneme deneme Deneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme deneme"
         label.numberOfLines = 0
         return label
     }()
     
-    lazy var movieVoteCount: UILabel = {
+    lazy var movieVoteCountLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "100,000"
         label.numberOfLines = 0
         return label
     }()
@@ -55,13 +51,24 @@ final class MovieDetailViewController: UIViewController {
 
     
     var presenter: MovieDetailPresenterInterface!
-
+    var id: Int
+    
+    init(id: Int) {
+        self.id = id
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - Lifecycle -
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
         setup()
         insertViews()
+        presenter.getMovieDetail(id: id)
     }
     
     // MARK - Setup -
@@ -85,16 +92,13 @@ final class MovieDetailViewController: UIViewController {
                                      scrollableStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                                      scrollableStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
                                      scrollableStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)])
-        
-        popCornFlixClient.movieDetail(id: 775996) { (response, error) in
-            //let imageURL = NetworkConstants.imageBaseURL + response?.posterPath ?? ""
-        }
     }
     
+    // MARK - Functions -
     private func insertViews() {
         scrollableStackView.stackView.insertArrangedSubview(movieNameLabel, at: scrollableStackView.stackView.arrangedSubviews.count)
         scrollableStackView.stackView.insertArrangedSubview(movieDescriptionLabel, at: scrollableStackView.stackView.arrangedSubviews.count)
-        scrollableStackView.stackView.insertArrangedSubview(movieVoteCount, at: scrollableStackView.stackView.arrangedSubviews.count)
+        scrollableStackView.stackView.insertArrangedSubview(movieVoteCountLabel, at: scrollableStackView.stackView.arrangedSubviews.count)
     }
     
     // MARK - Actions -
@@ -106,4 +110,11 @@ final class MovieDetailViewController: UIViewController {
 
 // MARK: - Extensions -
 extension MovieDetailViewController: MovieDetailViewInterface {
+    func setMovieData(movie: Movie) {
+        movieNameLabel.text = "Title: \(movie.title ?? "")"
+        movieDescriptionLabel.text = "Description: \(movie.overview ?? "")"
+        movieVoteCountLabel.text = "Vote count: \(String(movie.voteCount ?? 0))"
+        movieImageView.kf.setImage(with: URL(string: NetworkConstants.imageBaseURL + (movie.posterPath ?? "")), placeholder: VisualConstants.CommonIcons.moviePlaceholder.value)
+    }
+    
 }

@@ -16,13 +16,14 @@ final class MovieDetailWireframe: BaseWireframe {
 
     // MARK: - Module setup -
 
-    init() {
-        let moduleViewController = MovieDetailViewController()
+    init(data: MovieDetailWireFrameData) {
+        let moduleViewController = MovieDetailViewController(id: data.id)
         super.init(viewController: moduleViewController)
 
         let interactor = MovieDetailInteractor()
         let presenter = MovieDetailPresenter(view: moduleViewController, interactor: interactor, wireframe: self)
         moduleViewController.presenter = presenter
+        interactor.presenter = presenter
     }
 
 }
@@ -30,4 +31,8 @@ final class MovieDetailWireframe: BaseWireframe {
 // MARK: - Extensions -
 
 extension MovieDetailWireframe: MovieDetailWireframeInterface {
+    func completedWithError() {
+        
+    }
+    
 }

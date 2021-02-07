@@ -10,6 +10,12 @@ import UIKit
 protocol WireframeInterface: class {
 }
 
+extension WireframeInterface {
+}
+
+public protocol WireframeDataProtocol {
+}
+
 class BaseWireframe {
 
     private unowned var _viewController: UIViewController

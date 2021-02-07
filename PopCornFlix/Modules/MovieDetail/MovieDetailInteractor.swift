@@ -11,9 +11,23 @@
 import Foundation
 
 final class MovieDetailInteractor {
+    
+    var presenter: MovieDetailPresenter?
+    lazy var popCornFlixClient: PopCornFlixClientProtocol = PopCornFlixClient()
+    var movie: Movie?
 }
 
 // MARK: - Extensions -
-
 extension MovieDetailInteractor: MovieDetailInteractorInterface {
+    func getMovieDetail(id: Int) {
+        popCornFlixClient.movieDetail(id: id, completion: { [weak self]  (movie, error) in
+            guard let self = self else { return }
+            if let movie = movie {
+                self.presenter?.setMovieData(movie: movie)
+            } else {
+                self.presenter?.completedWithError()
+            }
+        })
+    }
+    
 }

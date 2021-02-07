@@ -36,14 +36,27 @@ final class MovieViewController: UIViewController {
         return collectionView
     }()
     
+    lazy var loadMoreButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .red
+        button.layer.masksToBounds = true
+        button.layer.cornerRadius = 5
+        button.addTarget(self, action: #selector(loadMoreButtonTapped), for: .touchUpInside)
+        button.isHidden = true
+        button.setTitle("Load More", for: .normal)
+        return button
+    }()
+    
     var presenter: MoviePresenterInterface!
     var movieList: MovieList?
+    var paginationIndex = 1
 
     // MARK: - Lifecycle -
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        presenter.getPopularMovies(pagination: 1)
+        presenter.getPopularMovies(pagination: paginationIndex)
     }
     
     // MARK: - Setup -
@@ -52,14 +65,26 @@ final class MovieViewController: UIViewController {
         title = PopCornFlixLocalizables.movie.value
         view.addSubview(searchBar)
         view.addSubview(collectionView)
+        view.addSubview(loadMoreButton)
+
         NSLayoutConstraint.activate([searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
                                      searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                                      searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-        
+                                     
                                      collectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
                                      collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                                      collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                                     collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)])
+                                     collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+                                     
+                                     loadMoreButton.widthAnchor.constraint(equalToConstant: 100),
+                                     loadMoreButton.heightAnchor.constraint(equalToConstant: 50),
+                                     loadMoreButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                                     loadMoreButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)])
+    }
+    
+    // MARK: - Actions -
+    @objc func loadMoreButtonTapped(sender : UIButton) {
+        presenter.getPopularMovies(pagination: paginationIndex + 1)
     }
 
 }
@@ -67,7 +92,19 @@ final class MovieViewController: UIViewController {
 // MARK: - Extensions -
 extension MovieViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter.openMovieDetailModule()
+        guard let movieList = movieList,
+              let movies = movieList.movies?[indexPath.row],
+              let id = movies.id else {
+            return
+        }
+        let data = MovieDetailWireFrameData(id: id)
+        presenter.openMovieDetailModule(data: data)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if (indexPath.row == movieList?.movies!.count ?? 0 - 1 ) {
+            loadMoreButton.isHidden = false
+         }
     }
     
 }

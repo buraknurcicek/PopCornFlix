@@ -42,8 +42,8 @@ extension MoviePresenter: MoviePresenterInterface {
     
     }
     
-    func openMovieDetailModule() {
-        wireframe.openMovieDetailModule()
+    func openMovieDetailModule(data: MovieDetailWireFrameData) {
+        wireframe.openMovieDetailModule(data: data)
     }
     
 }

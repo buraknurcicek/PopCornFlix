@@ -30,4 +30,16 @@ final class MovieDetailPresenter {
 // MARK: - Extensions -
 
 extension MovieDetailPresenter: MovieDetailPresenterInterface {
+    func getMovieDetail(id: Int) {
+        interactor.getMovieDetail(id: id)
+    }
+    
+    func setMovieData(movie: Movie) {
+        view.setMovieData(movie: movie)
+    }
+    
+    func completedWithError() {
+        
+    }
+    
 }
