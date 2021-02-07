@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  PopCornFlix
+
+  Created by Burak Nurçiçek on 7.02.2021.
+  
+*/
+
+"movie" = "Film";
+"movieDetail" = "Film Detay";
+"error" = "Hata";
+"errorMessage" = "Bir hata oluştu";
+"done" = "Tamam";
+"loadMore" = "Daha fazla";
