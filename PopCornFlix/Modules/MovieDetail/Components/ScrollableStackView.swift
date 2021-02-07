@@ -10,7 +10,7 @@ import UIKit
 // MARK: - ScrollableStackView
 class ScrollableStackView: UIView {
 
-    // MARK: - Properties
+    // MARK: - Properties -
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -22,11 +22,11 @@ class ScrollableStackView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
-        stackView.spacing = 0
+        stackView.spacing = 10
         return stackView
     }()
 
-    // MARK: - Init
+    // MARK: - Init -
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setup()
@@ -36,7 +36,7 @@ class ScrollableStackView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Setup
+    // MARK: - Setup -
     private func setup() {
         addSubview(scrollView)
         scrollView.addSubview(stackView)
@@ -50,7 +50,6 @@ class ScrollableStackView: UIView {
                                      stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
                                      stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
                                      stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-
                                      stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)])
     }
 }
