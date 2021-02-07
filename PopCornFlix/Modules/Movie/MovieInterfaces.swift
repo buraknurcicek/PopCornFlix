@@ -11,12 +11,14 @@
 import UIKit
 
 protocol MovieWireframeInterface: WireframeInterface {
+    func openMovieDetailModule()
 }
 
 protocol MovieViewInterface: ViewInterface {
 }
 
 protocol MoviePresenterInterface: PresenterInterface {
+    func openMovieDetailModule()
 }
 
 protocol MovieInteractorInterface: InteractorInterface {

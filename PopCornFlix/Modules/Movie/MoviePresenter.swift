@@ -30,4 +30,8 @@ final class MoviePresenter {
 // MARK: - Extensions -
 
 extension MoviePresenter: MoviePresenterInterface {
+    func openMovieDetailModule() {
+        wireframe.openMovieDetailModule()
+    }
+    
 }

@@ -21,6 +21,13 @@
 		599C248D25CF5F780012C82D /* PresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C248C25CF5F780012C82D /* PresenterInterface.swift */; };
 		599C249225CF5F920012C82D /* ViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C249125CF5F920012C82D /* ViewInterface.swift */; };
 		599C249725CF5FA40012C82D /* InteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C249625CF5FA40012C82D /* InteractorInterface.swift */; };
+		599C24A225CF66450012C82D /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C24A125CF66450012C82D /* MovieCollectionViewCell.swift */; };
+		599C24BB25CF76B20012C82D /* MovieDetailInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C24B625CF76B20012C82D /* MovieDetailInterfaces.swift */; };
+		599C24BC25CF76B20012C82D /* MovieDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C24B725CF76B20012C82D /* MovieDetailPresenter.swift */; };
+		599C24BD25CF76B20012C82D /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C24B825CF76B20012C82D /* MovieDetailViewController.swift */; };
+		599C24BE25CF76B20012C82D /* MovieDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C24B925CF76B20012C82D /* MovieDetailInteractor.swift */; };
+		599C24BF25CF76B20012C82D /* MovieDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C24BA25CF76B20012C82D /* MovieDetailWireframe.swift */; };
+		599C24CE25CF7CC90012C82D /* ScrollableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C24CD25CF7CC90012C82D /* ScrollableStackView.swift */; };
 		A4AC9916F41BE8A2447763B4 /* Pods_PopCornFlixTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67831DD33BDEC77CE8239717 /* Pods_PopCornFlixTests.framework */; };
 		AF1B8A7C0E93D41B7DDBB355 /* Pods_PopCornFlix_PopCornFlixUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CF39762425B619F4D90437 /* Pods_PopCornFlix_PopCornFlixUITests.framework */; };
 		F1A974B9B97F9749048F4A55 /* Pods_PopCornFlix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB739AE351B2AC789299E67A /* Pods_PopCornFlix.framework */; };
@@ -66,6 +73,13 @@
 		599C248C25CF5F780012C82D /* PresenterInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterInterface.swift; sourceTree = "<group>"; };
 		599C249125CF5F920012C82D /* ViewInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewInterface.swift; sourceTree = "<group>"; };
 		599C249625CF5FA40012C82D /* InteractorInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorInterface.swift; sourceTree = "<group>"; };
+		599C24A125CF66450012C82D /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		599C24B625CF76B20012C82D /* MovieDetailInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailInterfaces.swift; sourceTree = "<group>"; };
+		599C24B725CF76B20012C82D /* MovieDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenter.swift; sourceTree = "<group>"; };
+		599C24B825CF76B20012C82D /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		599C24B925CF76B20012C82D /* MovieDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailInteractor.swift; sourceTree = "<group>"; };
+		599C24BA25CF76B20012C82D /* MovieDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailWireframe.swift; sourceTree = "<group>"; };
+		599C24CD25CF7CC90012C82D /* ScrollableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableStackView.swift; sourceTree = "<group>"; };
 		67831DD33BDEC77CE8239717 /* Pods_PopCornFlixTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PopCornFlixTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A8ED4737D5D4AD44E7D8024 /* Pods-PopCornFlix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopCornFlix.debug.xcconfig"; path = "Target Support Files/Pods-PopCornFlix/Pods-PopCornFlix.debug.xcconfig"; sourceTree = "<group>"; };
 		8FDD13F1E5A5787CDFF38F94 /* Pods-PopCornFlixTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopCornFlixTests.debug.xcconfig"; path = "Target Support Files/Pods-PopCornFlixTests/Pods-PopCornFlixTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -210,7 +224,7 @@
 			children = (
 				599C248025CF5EAC0012C82D /* BaseModule */,
 				59F879FA25CF59DC0045EB10 /* Movie */,
-				59F879EE25CF58080045EB10 /* Base */,
+				599C24B125CF75F20012C82D /* MovieDetail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -258,11 +272,25 @@
 			name = BaseModule;
 			sourceTree = "<group>";
 		};
-		59F879EE25CF58080045EB10 /* Base */ = {
+		599C24B125CF75F20012C82D /* MovieDetail */ = {
 			isa = PBXGroup;
 			children = (
+				599C24C925CF7A550012C82D /* Components */,
+				599C24B625CF76B20012C82D /* MovieDetailInterfaces.swift */,
+				599C24B725CF76B20012C82D /* MovieDetailPresenter.swift */,
+				599C24B825CF76B20012C82D /* MovieDetailViewController.swift */,
+				599C24B925CF76B20012C82D /* MovieDetailInteractor.swift */,
+				599C24BA25CF76B20012C82D /* MovieDetailWireframe.swift */,
 			);
-			path = Base;
+			path = MovieDetail;
+			sourceTree = "<group>";
+		};
+		599C24C925CF7A550012C82D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				599C24CD25CF7CC90012C82D /* ScrollableStackView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		59F879FA25CF59DC0045EB10 /* Movie */ = {
@@ -273,6 +301,7 @@
 				599C247525CF5DE20012C82D /* MovieViewController.swift */,
 				599C247625CF5DE20012C82D /* MovieInteractor.swift */,
 				599C247725CF5DE20012C82D /* MovieWireframe.swift */,
+				599C24A125CF66450012C82D /* MovieCollectionViewCell.swift */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -530,11 +559,18 @@
 				599C247B25CF5DE20012C82D /* MovieInteractor.swift in Sources */,
 				599C247825CF5DE20012C82D /* MovieInterfaces.swift in Sources */,
 				599C248225CF5EB60012C82D /* BaseWireframe.swift in Sources */,
+				599C24CE25CF7CC90012C82D /* ScrollableStackView.swift in Sources */,
 				599C247925CF5DE20012C82D /* MoviePresenter.swift in Sources */,
+				599C24BD25CF76B20012C82D /* MovieDetailViewController.swift in Sources */,
+				599C24BE25CF76B20012C82D /* MovieDetailInteractor.swift in Sources */,
+				599C24BC25CF76B20012C82D /* MovieDetailPresenter.swift in Sources */,
 				599C249225CF5F920012C82D /* ViewInterface.swift in Sources */,
+				599C24BB25CF76B20012C82D /* MovieDetailInterfaces.swift in Sources */,
 				599C248D25CF5F780012C82D /* PresenterInterface.swift in Sources */,
+				599C24BF25CF76B20012C82D /* MovieDetailWireframe.swift in Sources */,
 				599C249725CF5FA40012C82D /* InteractorInterface.swift in Sources */,
 				599C247C25CF5DE20012C82D /* MovieWireframe.swift in Sources */,
+				599C24A225CF66450012C82D /* MovieCollectionViewCell.swift in Sources */,
 				5979FC4025CF13D600CC43B6 /* AppDelegate.swift in Sources */,
 				599C247A25CF5DE20012C82D /* MovieViewController.swift in Sources */,
 			);

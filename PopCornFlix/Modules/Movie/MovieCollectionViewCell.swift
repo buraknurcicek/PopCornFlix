@@ -16,6 +16,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
        let imageView = UIImageView()
         imageView.image = UIImage(named: "launchScreen")
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -37,16 +38,17 @@ class MovieCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    lazy var favoriteButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
+    lazy var favoriteImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "favorite_selected")
+        return imageView
     }()
-    
+        
     // MARK: - Init -
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = .blue
+        setup()
     }
     
     required init?(coder: NSCoder) {
@@ -58,7 +60,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(movieImageView)
         contentView.addSubview(titleView)
         contentView.addSubview(titleLabel)
-        contentView.addSubview(favoriteButton)
+        contentView.addSubview(favoriteImageView)
         
         NSLayoutConstraint.activate([movieImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
                                      movieImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
@@ -75,16 +77,12 @@ class MovieCollectionViewCell: UICollectionViewCell {
                                      titleLabel.trailingAnchor.constraint(equalTo: titleView.trailingAnchor),
                                      titleLabel.bottomAnchor.constraint(equalTo: titleView.bottomAnchor),
                                       
-                                     favoriteButton.widthAnchor.constraint(equalToConstant: 25),
-                                     favoriteButton.heightAnchor.constraint(equalToConstant: 25),
-                                     favoriteButton.trailingAnchor.constraint(equalTo: titleView.trailingAnchor, constant: -20),
-                                     favoriteButton.topAnchor.constraint(equalTo: titleView.topAnchor, constant: -20),
-                                                                       
-        
+                                     favoriteImageView.widthAnchor.constraint(equalToConstant: 40),
+                                     favoriteImageView.heightAnchor.constraint(equalToConstant: 40),
+                                     favoriteImageView.trailingAnchor.constraint(equalTo: movieImageView.trailingAnchor, constant: -20),
+                                     favoriteImageView.topAnchor.constraint(equalTo: movieImageView.topAnchor, constant: 20),
+                                                                    
         
         ])
-
     }
-    
-    
 }

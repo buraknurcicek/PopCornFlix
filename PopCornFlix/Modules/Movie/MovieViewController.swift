@@ -63,7 +63,9 @@ final class MovieViewController: UIViewController {
 
 // MARK: - Extensions -
 extension MovieViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.openMovieDetailModule()
+    }
     
 }
 
@@ -94,4 +96,5 @@ extension MovieViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension MovieViewController: MovieViewInterface {
+    
 }
