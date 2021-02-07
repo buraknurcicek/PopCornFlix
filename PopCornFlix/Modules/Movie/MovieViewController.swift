@@ -49,7 +49,7 @@ final class MovieViewController: UIViewController {
     }()
     
     var presenter: MoviePresenterInterface!
-    var movieList: MovieList?
+    var movies: [Movie] = []
     var paginationIndex = 1
 
     // MARK: - Lifecycle -
@@ -84,7 +84,13 @@ final class MovieViewController: UIViewController {
     
     // MARK: - Actions -
     @objc func loadMoreButtonTapped(sender : UIButton) {
-        presenter.getPopularMovies(pagination: paginationIndex + 1)
+        loadMoreButton.isHidden = true
+        paginationIndex += 1
+        presenter.getPopularMovies(pagination: paginationIndex)
+    }
+    
+    func updateNextSet(){
+        loadMoreButton.isHidden = false
     }
 
 }
@@ -92,36 +98,28 @@ final class MovieViewController: UIViewController {
 // MARK: - Extensions -
 extension MovieViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let movieList = movieList,
-              let movies = movieList.movies?[indexPath.row],
-              let id = movies.id else {
-            return
-        }
+        guard let id = movies[indexPath.row].id else { return }
         let data = MovieDetailWireFrameData(id: id)
         presenter.openMovieDetailModule(data: data)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if (indexPath.row == movieList?.movies!.count ?? 0 - 1 ) {
-            loadMoreButton.isHidden = false
-         }
+        if indexPath.row == movies.count - 1 {
+            updateNextSet()
+        }
     }
     
 }
 
 extension MovieViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let movieList = movieList,
-              let movie = movieList.movies else {
-            return 0
-        }
-        return movie.count
+        return movies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as! MovieCollectionViewCell
-        cell.titleLabel.text = movieList?.movies?[indexPath.row].title
-        cell.movieImageView.kf.setImage(with: URL(string: NetworkConstants.imageBaseURL + (movieList?.movies?[indexPath.row].posterPath ?? "")), placeholder: VisualConstants.CommonIcons.moviePlaceholder.value)
+        cell.titleLabel.text = movies[indexPath.row].title
+        cell.movieImageView.kf.setImage(with: URL(string: NetworkConstants.imageBaseURL + (movies[indexPath.row].posterPath ?? "")), placeholder: VisualConstants.CommonIcons.moviePlaceholder.value)
         return cell
     }
     
@@ -142,7 +140,10 @@ extension MovieViewController: UICollectionViewDelegateFlowLayout {
 
 extension MovieViewController: MovieViewInterface {
     func setPopularMovies(movieList: MovieList) {
-        self.movieList = movieList
+        guard let movies = movieList.movies else {
+            return
+        }
+        self.movies.append(contentsOf: movies)
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }

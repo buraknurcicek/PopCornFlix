@@ -89,8 +89,8 @@ final class MovieDetailViewController: UIViewController {
                                      movieImageView.heightAnchor.constraint(equalToConstant: 250),
                                     
                                      scrollableStackView.topAnchor.constraint(equalTo: movieImageView.bottomAnchor, constant: 20),
-                                     scrollableStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                                     scrollableStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                                     scrollableStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+                                     scrollableStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
                                      scrollableStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)])
     }
     
