@@ -17,6 +17,7 @@ final class MovieViewController: UIViewController {
     lazy var searchBar: UISearchBar = {
        let searchBar = UISearchBar()
         searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.delegate = self
         return searchBar
     }()
     
@@ -133,17 +134,27 @@ extension MovieViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let padding: CGFloat = 15
         let widthPerItem = collectionView.frame.width / 2 - padding
-        
         return CGSize(width:widthPerItem, height:250)
     }
 }
 
+extension MovieViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        presenter.search(query: searchText)
+    }
+}
+
+
 extension MovieViewController: MovieViewInterface {
-    func setPopularMovies(movieList: MovieList) {
-        guard let movies = movieList.movies else {
-            return
+    func getFilteredMovies(filteredMovies: [Movie]) {
+        self.movies = filteredMovies
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
         }
-        self.movies.append(contentsOf: movies)
+    }
+    
+    func setPopularMovies(movies: [Movie]) {
+        self.movies = movies
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }

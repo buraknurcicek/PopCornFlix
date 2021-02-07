@@ -351,8 +351,8 @@
 			isa = PBXGroup;
 			children = (
 				599C247325CF5DE20012C82D /* MovieInterfaces.swift */,
-				599C247425CF5DE20012C82D /* MoviePresenter.swift */,
 				599C247525CF5DE20012C82D /* MovieViewController.swift */,
+				599C247425CF5DE20012C82D /* MoviePresenter.swift */,
 				599C247625CF5DE20012C82D /* MovieInteractor.swift */,
 				599C247725CF5DE20012C82D /* MovieWireframe.swift */,
 				599C24A125CF66450012C82D /* MovieCollectionViewCell.swift */,

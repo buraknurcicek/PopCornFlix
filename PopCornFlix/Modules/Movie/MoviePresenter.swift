@@ -17,6 +17,8 @@ final class MoviePresenter {
     private unowned let view: MovieViewInterface
     private let interactor: MovieInteractorInterface
     private let wireframe: MovieWireframeInterface
+    
+    var movies: [Movie] = []
 
     // MARK: - Lifecycle -
 
@@ -30,12 +32,19 @@ final class MoviePresenter {
 // MARK: - Extensions -
 
 extension MoviePresenter: MoviePresenterInterface {
-    func setPopularMovies(movieList: MovieList) {
-        view.setPopularMovies(movieList: movieList)
-    }
-    
     func getPopularMovies(pagination: Int) {
         interactor.getPopularMovies(pagination: pagination)
+    }
+    
+    func setPopularMovies(movieList: MovieList) {
+        guard let movies = movieList.movies else { return }
+        self.movies.append(contentsOf: movies)
+        view.setPopularMovies(movies: self.movies)
+    }
+    
+    func search(query: String) {
+        let filtered = movies.filter{($0.title?.contains(query) ?? false)}
+        query == "" ? view.getFilteredMovies(filteredMovies: movies) : view.getFilteredMovies(filteredMovies: filtered)
     }
     
     func completedWithError() {
