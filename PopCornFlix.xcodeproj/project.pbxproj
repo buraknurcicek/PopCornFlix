@@ -19,7 +19,7 @@
 		5979FC5725CF13D700CC43B6 /* PopCornFlixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979FC5625CF13D700CC43B6 /* PopCornFlixTests.swift */; };
 		5979FC6225CF13D700CC43B6 /* PopCornFlixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979FC6125CF13D700CC43B6 /* PopCornFlixUITests.swift */; };
 		598ACE2425D0896E002ABC4A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 598ACE2625D0896E002ABC4A /* Localizable.strings */; };
-		598ACE2F25D08983002ABC4A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 598ACE3125D08983002ABC4A /* Localizable.strings */; };
+		598ACE4E25D08B3D002ABC4A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 598ACE5025D08B3D002ABC4A /* Localizable.strings */; };
 		599C247825CF5DE20012C82D /* MovieInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C247325CF5DE20012C82D /* MovieInterfaces.swift */; };
 		599C247925CF5DE20012C82D /* MoviePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C247425CF5DE20012C82D /* MoviePresenter.swift */; };
 		599C247A25CF5DE20012C82D /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C247525CF5DE20012C82D /* MovieViewController.swift */; };
@@ -85,7 +85,7 @@
 		5979FC6325CF13D700CC43B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		598ACE1B25D088F1002ABC4A /* tr-TR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "tr-TR"; path = "tr-TR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		598ACE2525D0896E002ABC4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		598ACE3025D08983002ABC4A /* tr-TR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "tr-TR"; path = "tr-TR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		598ACE4F25D08B3D002ABC4A /* tr-TR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "tr-TR"; path = "tr-TR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		599C247325CF5DE20012C82D /* MovieInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInterfaces.swift; sourceTree = "<group>"; };
 		599C247425CF5DE20012C82D /* MoviePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePresenter.swift; sourceTree = "<group>"; };
 		599C247525CF5DE20012C82D /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
@@ -209,12 +209,12 @@
 		5979FC3E25CF13D600CC43B6 /* PopCornFlix */ = {
 			isa = PBXGroup;
 			children = (
-				5954964E25D034ED00C87CE5 /* Views */,
 				5979FC7B25CF15A000CC43B6 /* App */,
 				592DA80425D01B8200B28AB0 /* Models */,
 				5979FC8325CF163700CC43B6 /* Modules */,
 				5979FC7C25CF15A900CC43B6 /* Networking */,
 				5979FC8025CF15FB00CC43B6 /* SupportingFlies */,
+				5954964E25D034ED00C87CE5 /* Views */,
 			);
 			path = PopCornFlix;
 			sourceTree = "<group>";
@@ -262,8 +262,9 @@
 				5979FC8125CF161F00CC43B6 /* Constants */,
 				5979FC8225CF162600CC43B6 /* Extensions */,
 				5979FCC125CF17AC00CC43B6 /* Helpers */,
-				599C24E625CF86A00012C82D /* Protocols */,
+				598ACE4225D08AF5002ABC4A /* Localization */,
 				5979FCC025CF178600CC43B6 /* Managers */,
+				599C24E625CF86A00012C82D /* Protocols */,
 			);
 			path = SupportingFlies;
 			sourceTree = "<group>";
@@ -273,8 +274,6 @@
 			children = (
 				599C24D725CF85770012C82D /* VisualConstants.swift */,
 				599C24F225CF875B0012C82D /* NetworkConstants.swift */,
-				598ACE2625D0896E002ABC4A /* Localizable.strings */,
-				598ACE3125D08983002ABC4A /* Localizable.strings */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -322,6 +321,16 @@
 			children = (
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		598ACE4225D08AF5002ABC4A /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				598ACE2625D0896E002ABC4A /* Localizable.strings */,
+				598ACE5025D08B3D002ABC4A /* Localizable.strings */,
+			);
+			name = Localization;
+			path = Constants/Localization;
 			sourceTree = "<group>";
 		};
 		599C248025CF5EAC0012C82D /* BaseModule */ = {
@@ -509,7 +518,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5979FC4C25CF13D600CC43B6 /* LaunchScreen.storyboard in Resources */,
-				598ACE2F25D08983002ABC4A /* Localizable.strings in Resources */,
+				598ACE4E25D08B3D002ABC4A /* Localizable.strings in Resources */,
 				598ACE2425D0896E002ABC4A /* Localizable.strings in Resources */,
 				5979FC4925CF13D600CC43B6 /* Assets.xcassets in Resources */,
 			);
@@ -719,10 +728,10 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		598ACE3125D08983002ABC4A /* Localizable.strings */ = {
+		598ACE5025D08B3D002ABC4A /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				598ACE3025D08983002ABC4A /* tr-TR */,
+				598ACE4F25D08B3D002ABC4A /* tr-TR */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
