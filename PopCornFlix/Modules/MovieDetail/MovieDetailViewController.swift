@@ -46,13 +46,22 @@ final class MovieDetailViewController: UIViewController {
         label.numberOfLines = 0
         return label
     }()
+    
+    lazy var rightBarButtonItem: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "favorite_unselected"), for: .normal)
+        button.addTarget(self, action: #selector(favoriteTapped), for: .touchUpInside)
+        button.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
+        return button
+    }()
 
     lazy var popCornFlixClient: PopCornFlixClientProtocol = PopCornFlixClient()
-
     
     var presenter: MovieDetailPresenterInterface!
     var id: Int
+    var isFavorited = false
     
+    // MARK: - Init-
     init(id: Int) {
         self.id = id
         super.init(nibName: nil, bundle: nil)
@@ -75,8 +84,8 @@ final class MovieDetailViewController: UIViewController {
     private func configureNavigationBar() {
         view.backgroundColor = .white
         title = PopCornFlixLocalizables.movieDetail.value
-        let rightBarButtonItem = UIBarButtonItem(image: VisualConstants.CommonIcons.favorite.value, style: .plain, target: self, action: #selector(favoriteTapped))
-        self.navigationItem.rightBarButtonItem  = rightBarButtonItem
+        let barButton = UIBarButtonItem(customView: rightBarButtonItem)
+        self.navigationItem.rightBarButtonItem = barButton
     }
     
     private func setup() {
@@ -103,7 +112,9 @@ final class MovieDetailViewController: UIViewController {
     
     // MARK - Actions -
     @objc func favoriteTapped() {
-        
+        isFavorited.toggle()
+        isFavorited ? rightBarButtonItem.setImage(VisualConstants.CommonIcons.favorite.value, for: .normal) : rightBarButtonItem.setImage(VisualConstants.CommonIcons.unfavorite.value, for: .normal)
+        presenter.addFavorite(id: id)
     }
 
 }

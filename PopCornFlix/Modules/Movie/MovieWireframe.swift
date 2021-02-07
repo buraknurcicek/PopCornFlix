@@ -15,7 +15,6 @@ final class MovieWireframe: BaseWireframe {
     // MARK: - Private properties -
 
     // MARK: - Module setup -
-
     init() {
         let moduleViewController = MovieViewController()
         super.init(viewController: moduleViewController)

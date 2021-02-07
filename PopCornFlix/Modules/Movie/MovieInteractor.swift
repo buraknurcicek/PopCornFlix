@@ -12,6 +12,7 @@ import Foundation
 
 final class MovieInteractor {
     
+    // MARK: - Properties -
     var presenter: MoviePresenter?
     lazy var popCornFlixClient: PopCornFlixClientProtocol = PopCornFlixClient()
     var movieList: MovieList?

@@ -15,7 +15,6 @@ final class MovieDetailWireframe: BaseWireframe {
     // MARK: - Private properties -
 
     // MARK: - Module setup -
-
     init(data: MovieDetailWireFrameData) {
         let moduleViewController = MovieDetailViewController(id: data.id)
         super.init(viewController: moduleViewController)
@@ -29,7 +28,6 @@ final class MovieDetailWireframe: BaseWireframe {
 }
 
 // MARK: - Extensions -
-
 extension MovieDetailWireframe: MovieDetailWireframeInterface {
     func completedWithError() {
         

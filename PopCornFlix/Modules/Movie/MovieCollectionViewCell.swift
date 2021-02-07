@@ -14,7 +14,6 @@ class MovieCollectionViewCell: UICollectionViewCell {
     
     lazy var movieImageView: UIImageView = {
        let imageView = UIImageView()
-        imageView.image = VisualConstants.CommonIcons.launchScreen.value
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         return imageView
@@ -32,7 +31,6 @@ class MovieCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
-        label.text = "Deneme"
         label.textColor = .white
         label.textAlignment = .center
         return label
@@ -80,9 +78,6 @@ class MovieCollectionViewCell: UICollectionViewCell {
                                      favoriteImageView.widthAnchor.constraint(equalToConstant: 40),
                                      favoriteImageView.heightAnchor.constraint(equalToConstant: 40),
                                      favoriteImageView.trailingAnchor.constraint(equalTo: movieImageView.trailingAnchor, constant: -20),
-                                     favoriteImageView.topAnchor.constraint(equalTo: movieImageView.topAnchor, constant: 20),
-                                                                    
-        
-        ])
+                                     favoriteImageView.topAnchor.constraint(equalTo: movieImageView.topAnchor, constant: 20)])
     }
 }

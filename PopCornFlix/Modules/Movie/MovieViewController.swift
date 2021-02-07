@@ -51,13 +51,21 @@ final class MovieViewController: UIViewController {
     
     var presenter: MoviePresenterInterface!
     var movies: [Movie] = []
+    var favorites: [Int] = []
     var paginationIndex = 1
-
+    
     // MARK: - Lifecycle -
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
         presenter.getPopularMovies(pagination: paginationIndex)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        presenter.getFavoriteMovies()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        setup()
     }
     
     // MARK: - Setup -
@@ -83,7 +91,7 @@ final class MovieViewController: UIViewController {
                                      loadMoreButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)])
     }
     
-    // MARK: - Actions -
+    // MARK: - Functions -
     @objc func loadMoreButtonTapped(sender : UIButton) {
         loadMoreButton.isHidden = true
         searchBar.text = ""
@@ -92,7 +100,13 @@ final class MovieViewController: UIViewController {
         presenter.getPopularMovies(pagination: paginationIndex)
     }
     
-    func updateNextSet(){
+    private func reloadTableView() {
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
+    
+    func showLoadMoreButton(){
         loadMoreButton.isHidden = false
     }
 
@@ -108,10 +122,9 @@ extension MovieViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row == movies.count - 1 {
-            updateNextSet()
+            showLoadMoreButton()
         }
     }
-    
 }
 
 extension MovieViewController: UICollectionViewDataSource {
@@ -125,7 +138,6 @@ extension MovieViewController: UICollectionViewDataSource {
         cell.movieImageView.kf.setImage(with: URL(string: NetworkConstants.imageBaseURL + (movies[indexPath.row].posterPath ?? "")), placeholder: VisualConstants.CommonIcons.moviePlaceholder.value)
         return cell
     }
-    
 }
 
 extension MovieViewController: UICollectionViewDelegateFlowLayout {
@@ -146,19 +158,18 @@ extension MovieViewController: UISearchBarDelegate {
     }
 }
 
-
 extension MovieViewController: MovieViewInterface {
+    func setFavoriteMovies(movieId: [Int]) {
+        self.favorites = movieId
+    }
+    
     func getFilteredMovies(filteredMovies: [Movie]) {
         self.movies = filteredMovies
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
-        }
+        reloadTableView()
     }
     
     func setPopularMovies(movies: [Movie]) {
         self.movies = movies
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
-        }
+        reloadTableView()
     }
 }

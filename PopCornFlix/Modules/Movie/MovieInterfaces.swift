@@ -17,6 +17,7 @@ protocol MovieWireframeInterface: WireframeInterface {
 protocol MovieViewInterface: ViewInterface {
     func setPopularMovies(movies: [Movie])
     func getFilteredMovies(filteredMovies: [Movie])
+    func setFavoriteMovies(movieId: [Int])
 }
 
 protocol MoviePresenterInterface: PresenterInterface {
@@ -25,6 +26,7 @@ protocol MoviePresenterInterface: PresenterInterface {
     func completedWithError()
     func setPopularMovies(movieList: MovieList)
     func search(query: String)
+    func getFavoriteMovies()
 
 }
 
