@@ -23,9 +23,10 @@ iOS movie application based on VIPER architecth
 
 # ScreenShots
 <a href="https://ibb.co/2SwtWDw"><img src="https://i.ibb.co/BGmZcXm/Simulator-Screen-Shot-i-Phone-8-2021-02-07-at-23-29-02.png" alt="Simulator-Screen-Shot-i-Phone-8-2021-02-07-at-23-29-02" border="0"></a>
+<a href="https://ibb.co/23H3F6b"><img src="https://i.ibb.co/PG0GrYS/Simulator-Screen-Shot-i-Phone-8-2021-02-07-at-23-40-35.png" alt="Simulator-Screen-Shot-i-Phone-8-2021-02-07-at-23-40-35" border="0"></a>
 
 # Contacts
 * email: burak.nurcicek@gmail.com
 
-# License
+# API
 themovie.org
