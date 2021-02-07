@@ -18,6 +18,7 @@ public enum VisualConstants {
         case launchScreen
         case favorite
         case unfavorite
+        case moviePlaceholder
         
         public var value: UIImage {
             switch self {
@@ -27,7 +28,8 @@ public enum VisualConstants {
                 return UIImage(imageLiteralResourceName: "favorite_selected")
             case .unfavorite:
                 return UIImage(imageLiteralResourceName: "favorite_unselected")
-            
+            case .moviePlaceholder:
+                return UIImage(imageLiteralResourceName: "moviePlaceholder")
             }
         }
     }

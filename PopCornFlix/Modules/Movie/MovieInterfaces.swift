@@ -15,11 +15,18 @@ protocol MovieWireframeInterface: WireframeInterface {
 }
 
 protocol MovieViewInterface: ViewInterface {
+    func setPopularMovies(movieList: MovieList)
+
 }
 
 protocol MoviePresenterInterface: PresenterInterface {
     func openMovieDetailModule()
+    func getPopularMovies(pagination: Int)
+    func completedWithError()
+    func setPopularMovies(movieList: MovieList)
+
 }
 
 protocol MovieInteractorInterface: InteractorInterface {
+    func getPopularMovies(pagination: Int)
 }

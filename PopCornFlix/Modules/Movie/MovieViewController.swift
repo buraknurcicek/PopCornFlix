@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class MovieViewController: UIViewController {
 
@@ -35,14 +36,14 @@ final class MovieViewController: UIViewController {
         return collectionView
     }()
     
-    lazy var popCornFlixClient: PopCornFlixClientProtocol = PopCornFlixClient()
-
     var presenter: MoviePresenterInterface!
+    var movieList: MovieList?
 
     // MARK: - Lifecycle -
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        presenter.getPopularMovies(pagination: 1)
     }
     
     // MARK: - Setup -
@@ -59,11 +60,6 @@ final class MovieViewController: UIViewController {
                                      collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                                      collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
                                      collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)])
-        
-        
-        popCornFlixClient.getPopularMovies(pagination: 1) { (movie, error) in
-            print(movie)
-        }
     }
 
 }
@@ -76,14 +72,19 @@ extension MovieViewController: UICollectionViewDelegate {
     
 }
 
-
 extension MovieViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        guard let movieList = movieList,
+              let movie = movieList.movies else {
+            return 0
+        }
+        return movie.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as! MovieCollectionViewCell
+        cell.titleLabel.text = movieList?.movies?[indexPath.row].title
+        cell.movieImageView.kf.setImage(with: URL(string: NetworkConstants.imageBaseURL + (movieList?.movies?[indexPath.row].posterPath ?? "")), placeholder: VisualConstants.CommonIcons.moviePlaceholder.value)
         return cell
     }
     
@@ -103,5 +104,10 @@ extension MovieViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension MovieViewController: MovieViewInterface {
-    
+    func setPopularMovies(movieList: MovieList) {
+        self.movieList = movieList
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
 }

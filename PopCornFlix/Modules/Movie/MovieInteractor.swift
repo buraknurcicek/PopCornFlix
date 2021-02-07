@@ -11,9 +11,22 @@
 import Foundation
 
 final class MovieInteractor {
+    
+    var presenter: MoviePresenter?
+    lazy var popCornFlixClient: PopCornFlixClientProtocol = PopCornFlixClient()
+    var movieList: MovieList?
 }
 
 // MARK: - Extensions -
-
 extension MovieInteractor: MovieInteractorInterface {
+    func getPopularMovies(pagination: Int) {
+        popCornFlixClient.getPopularMovies(pagination: pagination) { [weak self] (movieList, error) in
+            guard let self = self else { return }
+            if let movieList = movieList {
+                self.presenter?.setPopularMovies(movieList: movieList)
+            } else {
+                self.presenter?.completedWithError()
+            }
+        }
+    }
 }

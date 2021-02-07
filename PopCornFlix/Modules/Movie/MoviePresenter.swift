@@ -30,6 +30,18 @@ final class MoviePresenter {
 // MARK: - Extensions -
 
 extension MoviePresenter: MoviePresenterInterface {
+    func setPopularMovies(movieList: MovieList) {
+        view.setPopularMovies(movieList: movieList)
+    }
+    
+    func getPopularMovies(pagination: Int) {
+        interactor.getPopularMovies(pagination: pagination)
+    }
+    
+    func completedWithError() {
+    
+    }
+    
     func openMovieDetailModule() {
         wireframe.openMovieDetailModule()
     }
