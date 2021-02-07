@@ -29,10 +29,6 @@ final class MovieWireframe: BaseWireframe {
 
 // MARK: - Extensions -
 extension MovieWireframe: MovieWireframeInterface {
-    func openMovieDetailModule(id: Int) {
-        
-    }
-    
     func openMovieDetailModule(data : MovieDetailWireFrameData) {
         self.navigationController?.pushWireframe(MovieDetailWireframe(data: data))
     }

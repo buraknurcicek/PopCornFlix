@@ -54,14 +54,21 @@ final class MovieViewController: UIViewController {
     var favorites: [Int] = []
     var paginationIndex = 1
     
+    lazy var favoriteManager: FavoriteManagerProtocol = FavoriteManager()
+
     // MARK: - Lifecycle -
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.getPopularMovies(pagination: paginationIndex)
+        
+        favoriteManager.favoritesChanged = { favorites in
+            self.favorites = favorites
+            self.reloadCollectionView()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        presenter.getFavoriteMovies()
+        favoriteManager.getFavorites()
     }
     
     override func viewDidLayoutSubviews() {
@@ -100,7 +107,7 @@ final class MovieViewController: UIViewController {
         presenter.getPopularMovies(pagination: paginationIndex)
     }
     
-    private func reloadTableView() {
+    private func reloadCollectionView() {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
@@ -135,6 +142,7 @@ extension MovieViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as! MovieCollectionViewCell
         cell.titleLabel.text = movies[indexPath.row].title
+        cell.favoriteImageView.isHidden = favorites.contains(movies[indexPath.row].id ?? 0) ? false : true
         cell.movieImageView.kf.setImage(with: URL(string: NetworkConstants.imageBaseURL + (movies[indexPath.row].posterPath ?? "")), placeholder: VisualConstants.CommonIcons.moviePlaceholder.value)
         return cell
     }
@@ -161,11 +169,11 @@ extension MovieViewController: UISearchBarDelegate {
 extension MovieViewController: MovieViewInterface {
     func getFilteredMovies(filteredMovies: [Movie]) {
         self.movies = filteredMovies
-        reloadTableView()
+        reloadCollectionView()
     }
     
     func setPopularMovies(movies: [Movie]) {
         self.movies = movies
-        reloadTableView()
+        reloadCollectionView()
     }
 }

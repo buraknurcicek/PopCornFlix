@@ -21,6 +21,7 @@ final class FavoriteManager: FavoriteManagerProtocol {
     var favorites: [Int] = [] {
         didSet {
             favoritesChanged?(favorites)
+            print(favorites)
             setLocale()
         }
     }
@@ -42,11 +43,14 @@ final class FavoriteManager: FavoriteManagerProtocol {
     
     func getLocale() -> [Int] {
         guard let movies = userDefaults.array(forKey: "favorites") as? [Int] else { return [] }
+        print("get return ",movies)
         return movies
     }
     
     func setLocale() {
         userDefaults.setValue(favorites, forKey: "favorites")
+        print("set return ",favorites)
+
     }
     
 }

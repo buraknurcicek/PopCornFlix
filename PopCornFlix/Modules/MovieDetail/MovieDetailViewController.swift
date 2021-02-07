@@ -56,10 +56,12 @@ final class MovieDetailViewController: UIViewController {
     }()
 
     lazy var popCornFlixClient: PopCornFlixClientProtocol = PopCornFlixClient()
-    
+    lazy var favoriteManager: FavoriteManagerProtocol = FavoriteManager()
+
     var presenter: MovieDetailPresenterInterface!
     var id: Int
     var isFavorited = false
+    var favoritedMovies: [Int] = []
     
     // MARK: - Init-
     init(id: Int) {
@@ -78,6 +80,15 @@ final class MovieDetailViewController: UIViewController {
         setup()
         insertViews()
         presenter.getMovieDetail(id: id)
+        
+        favoriteManager.favoritesChanged = { favorites in
+            self.favoritedMovies = favorites
+            self.configureFavoriteButton(isFavorited: favorites.contains(self.id))
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        favoriteManager.getFavorites()
     }
     
     // MARK - Setup -
@@ -114,6 +125,7 @@ final class MovieDetailViewController: UIViewController {
     @objc func favoriteTapped() {
         isFavorited.toggle()
         configureFavoriteButton(isFavorited: isFavorited)
+        favoriteManager.favoriteAction(id: id)
     }
     
     func configureFavoriteButton(isFavorited: Bool) {

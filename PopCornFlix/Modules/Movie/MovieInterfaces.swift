@@ -25,8 +25,6 @@ protocol MoviePresenterInterface: PresenterInterface {
     func completedWithError()
     func setPopularMovies(movieList: MovieList)
     func search(query: String)
-    func getFavoriteMovies()
-
 }
 
 protocol MovieInteractorInterface: InteractorInterface {
