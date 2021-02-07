@@ -50,7 +50,7 @@ enum PopCornFlixRouter: URLRequestConvertible {
         var request = URLRequest(url: url.appendingPathComponent(path))
         request.httpMethod = method.rawValue
         request.timeoutInterval = 20
-    
+        
         return try URLEncoding.default.encode(request, with: parameters)
     }
     

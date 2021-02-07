@@ -49,7 +49,7 @@ final class MovieDetailViewController: UIViewController {
     
     lazy var rightBarButtonItem: UIButton = {
         let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "favorite_unselected"), for: .normal)
+        button.setImage(VisualConstants.CommonIcons.unfavorite.value, for: .normal)
         button.addTarget(self, action: #selector(favoriteTapped), for: .touchUpInside)
         button.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
         return button
@@ -57,7 +57,6 @@ final class MovieDetailViewController: UIViewController {
 
     lazy var popCornFlixClient: PopCornFlixClientProtocol = PopCornFlixClient()
     lazy var favoriteManager: FavoriteManagerProtocol = FavoriteManager()
-
     var presenter: MovieDetailPresenterInterface!
     var id: Int
     var isFavorited = false
@@ -76,15 +75,9 @@ final class MovieDetailViewController: UIViewController {
     // MARK: - Lifecycle -
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureNavigationBar()
         setup()
-        insertViews()
         presenter.getMovieDetail(id: id)
-        
-        favoriteManager.favoritesChanged = { favorites in
-            self.favoritedMovies = favorites
-            self.configureFavoriteButton(isFavorited: favorites.contains(self.id))
-        }
+        getFavorites()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,6 +93,12 @@ final class MovieDetailViewController: UIViewController {
     }
     
     private func setup() {
+        configureNavigationBar()
+        addSubViews()
+        insertSubViews()
+    }
+    
+    private func addSubViews() {
         view.addSubview(movieImageView)
         view.addSubview(scrollableStackView)
         
@@ -114,12 +113,19 @@ final class MovieDetailViewController: UIViewController {
                                      scrollableStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)])
     }
     
-    // MARK - Functions -
-    private func insertViews() {
+    private func insertSubViews() {
         scrollableStackView.stackView.insertArrangedSubview(movieNameLabel, at: scrollableStackView.stackView.arrangedSubviews.count)
         scrollableStackView.stackView.insertArrangedSubview(movieDescriptionLabel, at: scrollableStackView.stackView.arrangedSubviews.count)
         scrollableStackView.stackView.insertArrangedSubview(movieVoteCountLabel, at: scrollableStackView.stackView.arrangedSubviews.count)
     }
+    
+    // MARK - Functions -
+    private func getFavorites() {
+         favoriteManager.favoritesChanged = { favorites in
+             self.favoritedMovies = favorites
+             self.configureFavoriteButton(isFavorited: favorites.contains(self.id))
+         }
+     }
     
     // MARK - Actions -
     @objc func favoriteTapped() {

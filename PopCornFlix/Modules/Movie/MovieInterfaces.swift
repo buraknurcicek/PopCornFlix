@@ -12,6 +12,7 @@ import UIKit
 
 protocol MovieWireframeInterface: WireframeInterface {
     func openMovieDetailModule(data: MovieDetailWireFrameData)
+    func completedWithError()
 }
 
 protocol MovieViewInterface: ViewInterface {

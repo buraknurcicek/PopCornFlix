@@ -24,7 +24,7 @@ class PopCornFlixClient: PopCornFlixClientProtocol {
         serviceClient.makeRequestWithData(route: PopCornFlixRouter.popularMovies(pagination: pagination)) { (response, error) in
             guard let data = response,
                   let movieList = self.convertToModel(data: data, decodingType: MovieList.self) else {
-                    completion(nil, error)
+                completion(nil, error)
                 return
             }
             
@@ -36,7 +36,7 @@ class PopCornFlixClient: PopCornFlixClientProtocol {
         serviceClient.makeRequestWithData(route: PopCornFlixRouter.movieDetail(id: id)) { (response, error) in
             guard let data = response,
                   let movie = self.convertToModel(data: data, decodingType: Movie.self) else {
-                    completion(nil, error)
+                completion(nil, error)
                 return
             }
             

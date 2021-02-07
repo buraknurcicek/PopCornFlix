@@ -14,7 +14,7 @@ protocol ServiceClientProtocol {
 }
 
 class ServiceClient: ServiceClientProtocol {
-        
+    
     func makeRequestWithData(route: URLRequestConvertible, completion: @escaping (_ responseData: Data?, _ error: Error?) -> Void) {
         AF.request(route).validate().responseData { (response) in
             if let request = response.request,

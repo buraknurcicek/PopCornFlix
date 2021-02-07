@@ -172,6 +172,13 @@
 			path = FavoriteManager;
 			sourceTree = "<group>";
 		};
+		5954967B25D0800600C87CE5 /* AlertManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AlertManager;
+			sourceTree = "<group>";
+		};
 		5979FC3325CF13D600CC43B6 = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +303,7 @@
 		5979FCC025CF178600CC43B6 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				5954967B25D0800600C87CE5 /* AlertManager */,
 				5954966A25D054D900C87CE5 /* FavoriteManager */,
 				599C24F725CF87D20012C82D /* LocalizationManager */,
 			);

@@ -11,14 +11,14 @@
 import Foundation
 
 final class MovieDetailPresenter {
-
+    
     // MARK: - Private properties -
     private unowned let view: MovieDetailViewInterface
     private let interactor: MovieDetailInteractorInterface
     private let wireframe: MovieDetailWireframeInterface
     
     lazy var favoriteManager: FavoriteManagerProtocol = FavoriteManager()
-
+    
     // MARK: - Lifecycle -
     init(view: MovieDetailViewInterface, interactor: MovieDetailInteractorInterface, wireframe: MovieDetailWireframeInterface) {
         self.view = view
@@ -36,10 +36,10 @@ extension MovieDetailPresenter: MovieDetailPresenterInterface {
     func setMovieData(movie: Movie) {
         view.setMovieData(movie: movie)
     }
-  
+    
     
     func completedWithError() {
-        
+        wireframe.completedWithError()
     }
     
 }

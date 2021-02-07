@@ -25,13 +25,13 @@ final class FavoriteManager: FavoriteManagerProtocol {
             setLocale()
         }
     }
-
+    
     var favoritesChanged: (([Int]) -> Void)?
     
     func getFavorites() {
         self.favorites = getLocale()
     }
-
+    
     func favoriteAction(id: Int) {
         guard let index = favorites.firstIndex(of: id) else {
             favorites.append(id)
@@ -50,7 +50,7 @@ final class FavoriteManager: FavoriteManagerProtocol {
     func setLocale() {
         userDefaults.setValue(favorites, forKey: "favorites")
         print("set return ",favorites)
-
+        
     }
     
 }

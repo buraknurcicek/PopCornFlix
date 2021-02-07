@@ -12,10 +12,10 @@ import UIKit
 import Kingfisher
 
 final class MovieViewController: UIViewController {
-
+    
     // MARK: - Public properties -
     lazy var searchBar: UISearchBar = {
-       let searchBar = UISearchBar()
+        let searchBar = UISearchBar()
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         searchBar.delegate = self
         return searchBar
@@ -45,7 +45,7 @@ final class MovieViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(loadMoreButtonTapped), for: .touchUpInside)
         button.isHidden = true
-        button.setTitle("Load More", for: .normal)
+        button.setTitle(PopCornFlixLocalizables.loadMore.value, for: .normal)
         return button
     }()
     
@@ -55,16 +55,13 @@ final class MovieViewController: UIViewController {
     var paginationIndex = 1
     
     lazy var favoriteManager: FavoriteManagerProtocol = FavoriteManager()
-
+    
     // MARK: - Lifecycle -
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.getPopularMovies(pagination: paginationIndex)
         
-        favoriteManager.favoritesChanged = { favorites in
-            self.favorites = favorites
-            self.reloadCollectionView()
-        }
+        presenter.getPopularMovies(pagination: paginationIndex)
+        getFavorites()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,7 +79,7 @@ final class MovieViewController: UIViewController {
         view.addSubview(searchBar)
         view.addSubview(collectionView)
         view.addSubview(loadMoreButton)
-
+        
         NSLayoutConstraint.activate([searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
                                      searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                                      searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -99,6 +96,13 @@ final class MovieViewController: UIViewController {
     }
     
     // MARK: - Functions -
+    private func getFavorites() {
+        favoriteManager.favoritesChanged = { favorites in
+            self.favorites = favorites
+            self.reloadCollectionView()
+        }
+    }
+    
     @objc func loadMoreButtonTapped(sender : UIButton) {
         loadMoreButton.isHidden = true
         searchBar.text = ""
@@ -116,7 +120,7 @@ final class MovieViewController: UIViewController {
     func showLoadMoreButton(){
         loadMoreButton.isHidden = false
     }
-
+    
 }
 
 // MARK: - Extensions -
@@ -152,7 +156,7 @@ extension MovieViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let padding: CGFloat = 15
         let widthPerItem = collectionView.frame.width / 2 - padding

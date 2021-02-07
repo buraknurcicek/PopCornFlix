@@ -14,8 +14,8 @@ final class MovieInteractor {
     
     // MARK: - Properties -
     var presenter: MoviePresenter?
-    lazy var popCornFlixClient: PopCornFlixClientProtocol = PopCornFlixClient()
     var movieList: MovieList?
+    lazy var popCornFlixClient: PopCornFlixClientProtocol = PopCornFlixClient()
 }
 
 // MARK: - Extensions -

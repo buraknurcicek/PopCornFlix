@@ -13,7 +13,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
     static let identifier = "MovieCollectionViewCell"
     
     lazy var movieImageView: UIImageView = {
-       let imageView = UIImageView()
+        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         return imageView
@@ -42,7 +42,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
         imageView.image = VisualConstants.CommonIcons.favorite.value
         return imageView
     }()
-        
+    
     // MARK: - Init -
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -64,7 +64,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
                                      movieImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
                                      movieImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
                                      movieImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-
+                                     
                                      titleView.heightAnchor.constraint(equalToConstant: 50),
                                      titleView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
                                      titleView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
@@ -74,7 +74,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
                                      titleLabel.leadingAnchor.constraint(equalTo: titleView.leadingAnchor),
                                      titleLabel.trailingAnchor.constraint(equalTo: titleView.trailingAnchor),
                                      titleLabel.bottomAnchor.constraint(equalTo: titleView.bottomAnchor),
-                                      
+                                     
                                      favoriteImageView.widthAnchor.constraint(equalToConstant: 40),
                                      favoriteImageView.heightAnchor.constraint(equalToConstant: 40),
                                      favoriteImageView.trailingAnchor.constraint(equalTo: movieImageView.trailingAnchor, constant: -20),

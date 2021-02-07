@@ -12,9 +12,9 @@ public typealias CommonIcons = VisualConstants.CommonIcons
 public enum VisualConstants {
     
     public enum CommonIcons: GenericValueProtocol {
-       
+        
         public typealias Value = UIImage
-
+        
         case launchScreen
         case favorite
         case unfavorite
