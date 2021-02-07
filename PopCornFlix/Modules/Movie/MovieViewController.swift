@@ -34,6 +34,8 @@ final class MovieViewController: UIViewController {
         collectionView.dataSource = self
         return collectionView
     }()
+    
+    lazy var popCornFlixClient: PopCornFlixClientProtocol = PopCornFlixClient()
 
     var presenter: MoviePresenterInterface!
 
@@ -57,6 +59,11 @@ final class MovieViewController: UIViewController {
                                      collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                                      collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
                                      collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)])
+        
+        
+        popCornFlixClient.getPopularMovies(pagination: 1) { (movie, error) in
+            print(movie)
+        }
     }
 
 }

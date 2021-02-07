@@ -14,7 +14,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
     
     lazy var movieImageView: UIImageView = {
        let imageView = UIImageView()
-        imageView.image = VisualContents.CommonIcons.launchScreen.value
+        imageView.image = VisualConstants.CommonIcons.launchScreen.value
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         return imageView
@@ -41,7 +41,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
     lazy var favoriteImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = VisualContents.CommonIcons.favorite.value
+        imageView.image = VisualConstants.CommonIcons.favorite.value
         return imageView
     }()
         

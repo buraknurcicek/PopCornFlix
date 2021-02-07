@@ -21,7 +21,7 @@ final class MovieDetailViewController: UIViewController {
     
     lazy var movieImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = VisualContents.CommonIcons.launchScreen.value
+        imageView.image = VisualConstants.CommonIcons.launchScreen.value
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -51,6 +51,9 @@ final class MovieDetailViewController: UIViewController {
         return label
     }()
 
+    lazy var popCornFlixClient: PopCornFlixClientProtocol = PopCornFlixClient()
+
+    
     var presenter: MovieDetailPresenterInterface!
 
     // MARK: - Lifecycle -
@@ -65,7 +68,7 @@ final class MovieDetailViewController: UIViewController {
     private func configureNavigationBar() {
         view.backgroundColor = .white
         title = PopCornFlixLocalizables.movieDetail.value
-        let rightBarButtonItem = UIBarButtonItem(image: VisualContents.CommonIcons.favorite.value, style: .plain, target: self, action: #selector(favoriteTapped))
+        let rightBarButtonItem = UIBarButtonItem(image: VisualConstants.CommonIcons.favorite.value, style: .plain, target: self, action: #selector(favoriteTapped))
         self.navigationItem.rightBarButtonItem  = rightBarButtonItem
     }
     
@@ -82,6 +85,10 @@ final class MovieDetailViewController: UIViewController {
                                      scrollableStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                                      scrollableStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
                                      scrollableStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)])
+        
+        popCornFlixClient.movieDetail(id: 775996) { (response, error) in
+            //let imageURL = NetworkConstants.imageBaseURL + response?.posterPath ?? ""
+        }
     }
     
     private func insertViews() {
