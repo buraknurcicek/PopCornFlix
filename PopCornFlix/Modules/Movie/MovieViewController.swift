@@ -46,7 +46,7 @@ final class MovieViewController: UIViewController {
     // MARK: - Setup -
     func setup() {
         view.backgroundColor = .white
-        title = "Movie"
+        title = PopCornFlixLocalizables.movie.value
         view.addSubview(searchBar)
         view.addSubview(collectionView)
         NSLayoutConstraint.activate([searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),

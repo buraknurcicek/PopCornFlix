@@ -21,7 +21,7 @@ final class MovieDetailViewController: UIViewController {
     
     lazy var movieImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "launchScreen")
+        imageView.image = VisualContents.CommonIcons.launchScreen.value
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -38,7 +38,7 @@ final class MovieDetailViewController: UIViewController {
     lazy var movieDescriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Deneme deneme deneme deneme"
+        label.text = "Deneme deneme deneme deneme Deneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme denemeDeneme deneme deneme deneme"
         label.numberOfLines = 0
         return label
     }()
@@ -64,7 +64,8 @@ final class MovieDetailViewController: UIViewController {
     // MARK - Setup -
     private func configureNavigationBar() {
         view.backgroundColor = .white
-        let rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "favorite_selected"), style: .plain, target: self, action: #selector(favoriteTapped))
+        title = PopCornFlixLocalizables.movieDetail.value
+        let rightBarButtonItem = UIBarButtonItem(image: VisualContents.CommonIcons.favorite.value, style: .plain, target: self, action: #selector(favoriteTapped))
         self.navigationItem.rightBarButtonItem  = rightBarButtonItem
     }
     
@@ -80,13 +81,13 @@ final class MovieDetailViewController: UIViewController {
                                      scrollableStackView.topAnchor.constraint(equalTo: movieImageView.bottomAnchor, constant: 20),
                                      scrollableStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                                      scrollableStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                                     scrollableStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)])
+                                     scrollableStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)])
     }
     
     private func insertViews() {
-        scrollableStackView.stackView.insertArrangedSubview(movieNameLabel, at: 0)
-        scrollableStackView.stackView.insertArrangedSubview(movieDescriptionLabel, at: 1)
-        scrollableStackView.stackView.insertArrangedSubview(movieVoteCount, at: 2)
+        scrollableStackView.stackView.insertArrangedSubview(movieNameLabel, at: scrollableStackView.stackView.arrangedSubviews.count)
+        scrollableStackView.stackView.insertArrangedSubview(movieDescriptionLabel, at: scrollableStackView.stackView.arrangedSubviews.count)
+        scrollableStackView.stackView.insertArrangedSubview(movieVoteCount, at: scrollableStackView.stackView.arrangedSubviews.count)
     }
     
     // MARK - Actions -
