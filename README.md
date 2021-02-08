@@ -4,8 +4,8 @@
 iOS movie application based on VIPER architecth
 
 # Requirements
-* Xcode 12 or later
-* iOS 14 or later
+* Xcode 11 or later
+* iOS 13 or later
 
 # Getting Started
 * Clone or download
