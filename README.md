@@ -30,4 +30,4 @@ iOS movie application based on VIPER architecth
 * email: burak.nurcicek@gmail.com
 
 # Api
-themovie.org
+* themovie.org
